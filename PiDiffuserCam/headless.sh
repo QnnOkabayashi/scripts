@@ -23,6 +23,16 @@ fi
 
 sd_path=${volumes[$num_id]}
 
+echo "Are you sure you want to write to $sd_path? [Y/n]"
+
+read confirm
+
+if [[ $confirm != "Y" && $confirm != "y" ]]
+then
+    echo "Cancelling initialization"
+    exit 1
+fi
+
 echo "Enter your WiFi SSID:"
 
 read ssid
