@@ -15,7 +15,7 @@ read user_input
 
 num_id=$(($user_input - 1))
 
-if [[ $num_id -lt 0 || $num_id -ge $i ]]
+if [[ $num_id -lt 0 || $num_id -ge $len ]]
 then
     echo "Invalid directory choice: $user_input"
     exit 1
