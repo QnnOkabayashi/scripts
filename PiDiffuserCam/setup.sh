@@ -3,6 +3,6 @@
 # sudo apt-get update
 # sudo apt-get install git python3-picamera
 
-# git clone https://github.com/QnnOkabayashi/PiDiffuserCam.git
+# git clone https://github.com/QnnOkabayashi/PiDiffuserCam.git /home/pi/PiDiffuserCam
 
-echo "Testing remotely running a script!"
+echo "Remote test 2"
