@@ -1,12 +1,27 @@
-echo 'Enter the path to your SD card:'
+echo "Select your SD card"
 
-read sd_path
+volumes=() len=0
+while IFS=  read -r -d $'\0'; do
+    if [ $len -ne 0 ]
+    then
+        volumes+=("$REPLY")
+        echo $len: $REPLY
+    fi
+    ((len++))
+done < <(find /Volumes -print0 -maxdepth 1)
+((len--)) 
 
-if [ ! -w $sd_path ]
+read user_input
+
+num_id=$(($user_input - 1))
+
+if [[ $num_id -lt 0 || $num_id -ge $i ]]
 then
-    echo "Directory doesn't exist: $sd_path"
+    echo "Invalid directory choice: $user_input"
     exit 1
 fi
+
+sd_path=${volumes[$num_id]}
 
 echo "Enter your WiFi SSID:"
 
