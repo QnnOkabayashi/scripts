@@ -1,7 +1,7 @@
 # HeadlessPi
 Quinn Okabayashi
 ___
-This script will completely automate the process of configuring your Raspberry Pi for [headless operation](https://en.wikipedia.org/wiki/Headless_computer).
+This script streamlines the process of configuring your Raspberry Pi for [headless operation](https://en.wikipedia.org/wiki/Headless_computer).
 
 Currently only Max OS is supported.
 ___
