@@ -26,7 +26,7 @@ This will:
 You may now remove the micro SD card and insert it into your Raspberry Pi.
 ___
 ## Connecting via SSH
-1. When your Pi is powered on, open your terminal and enter the following
+1. When your Pi is powered on, open your terminal and enter the following:
     ```
     $ ssh pi@raspberrypi.local
     ```
@@ -38,7 +38,7 @@ ___
     Are you sure you want to continue connecting (yes/no/[fingerprint])?
     ```
 
-3. It will then prompt you for the password, which is `raspberry` by default
+3. It will then prompt you for the password, which is `raspberry` by default.
 
-4. To disconnect from the SSH, use the `exit` command
+4. To disconnect from the SSH, use the `exit` command.
 
