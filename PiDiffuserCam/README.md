@@ -3,7 +3,7 @@ Quinn Okabayashi and Josh Vandervelde
 ___
 This script streamlines the process of configuring our [PiDiffuserCam code](https://github.com/QnnOkabayashi/PiDiffuserCam).
 
-Currently only Max OS is supported.
+Currently only Mac OS is supported.
 ___
 ## Configure SSH on your Raspberry Pi
 Follow the instructions [here](https://github.com/QnnOkabayashi/scripts/blob/master/HeadlessPi/README.md) for configuring your Raspberry Pi for headless mode and connecting via SSH.

@@ -3,7 +3,7 @@ Quinn Okabayashi
 ___
 This script streamlines the process of configuring your Raspberry Pi for [headless operation](https://en.wikipedia.org/wiki/Headless_computer).
 
-Currently only Max OS is supported.
+Currently only Mac OS is supported.
 ___
 ## Flashing the OS image
 Insert an unused micro SD card into your machine, and enter the following command:
