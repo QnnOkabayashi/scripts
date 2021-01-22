@@ -22,9 +22,9 @@ ___
     [Source code](https://github.com/QnnOkabayashi/scripts/blob/master/PiDiffuserCam/setup.sh)
 
     This will:
-    1. Update the package manager
-    2. Install Git and PiCamera, required dependencies
-    3. Clone the project repo code to the home directory
-    4. Enable the camera module
-    5. Reboot
+    * Update the package manager
+    * Install Git and PiCamera, required dependencies
+    * Clone the project repo code to the home directory
+    * Enable the camera module
+    * Reboot
     > Note: Sometimes this code doesn't do anything for reasons beyond me. If it doesn't work at first, wait a minute and try again.
