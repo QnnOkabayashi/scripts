@@ -6,7 +6,7 @@ This script streamlines the process of configuring our [PiDiffuserCam code](http
 Currently only Max OS is supported.
 ___
 ## Configure SSH on your Raspberry Pi
-Follow the instructions [here](https://github.com/QnnOkabayashi/scripts/blob/master/HeadlessPi/README.md) for configuring your Raspberry Pi for headless mode.
+Follow the instructions [here](https://github.com/QnnOkabayashi/scripts/blob/master/HeadlessPi/README.md) for configuring your Raspberry Pi for headless mode and connecting via SSH.
 ___
 ## Initialize project code
 Once connected via SSH, setup the project with the following command:
