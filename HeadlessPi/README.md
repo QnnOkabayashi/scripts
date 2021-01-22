@@ -1,7 +1,7 @@
 # HeadlessPi
 Quinn Okabayashi
 ___
-This script streamlines the process of configuring your Raspberry Pi for [headless operation](https://en.wikipedia.org/wiki/Headless_computer).
+This page streamlines the process of configuring your Raspberry Pi for [headless operation](https://en.wikipedia.org/wiki/Headless_computer).
 
 Currently only Mac OS is supported.
 ___
