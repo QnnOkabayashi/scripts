@@ -17,11 +17,11 @@ def get_disk_choice() -> str:
         for disk in out.split('\n\n')   # loop through each "disk" section that's physical
         if '(external, physical)' in disk
         for line in disk.split('\n')    # find line representing entire disk
-        if len(line.split('*')) == 2
+        if '*' in line
     ]
 
     if len(disks) == 0:
-        exit('You have no external drives connected, exiting')
+        exit('You have no external drives connected')
 
     print("Select your SD card (0 to exit)")
     for i, (size, name) in enumerate(disks):
@@ -31,11 +31,13 @@ def get_disk_choice() -> str:
     try:
         id = int(user_choice)
         if id == 0:
-            exit('No volume selected, exiting')
+            exit('No volume selected')
         elif id > len(disks):
-            exit(f'Invalid disk ID: {id}')
+            exit(f'Disk ID is too large: {id}')
+        elif id < 0:
+            exit(f'Disk ID cannot be negative: {id}')
     except ValueError:
-        exit(f'Invalid disk ID: {id}')
+        exit(f'Invalid disk ID: {user_choice}')
 
     disk_name = disks[id - 1][1]
 
@@ -72,7 +74,6 @@ def flash_rpi_os(rdisk_path: str):
         .decode('utf-8')
     )
 
-    # sync processes
     subprocess.run(['sync'])
 
     if 'Operation not permitted' in err:
@@ -87,7 +88,6 @@ def flash_rpi_os(rdisk_path: str):
     elif 'bytes transferred in' not in err:
         exit(f'An error occurred:\n{err}')
 
-    # delete tmp file
     os.remove(image_path)
 
 
@@ -122,9 +122,9 @@ def eject_sd_card(rdisk_path: str):
     )
 
     if 'Volume failed to eject' in err:
-        exit('The volume could not be ejected because it is in use, but all necessary contents are written')
-
-    print('You may now eject the SD card')
+        print('The volume could not be ejected because it is in use, but all necessary contents are written')
+    else:
+        print('You may now eject the SD card')
 
 
 if __name__ == '__main__':
