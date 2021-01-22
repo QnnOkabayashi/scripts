@@ -16,19 +16,22 @@ def get_disk_choice() -> str:
         if len(line.split('*')) == 2
     ]
 
+    if len(disks) == 0:
+        exit('You have no external drives connected, exiting')
+
     print("Select your SD card (0 to exit)")
     for i, (size, name) in enumerate(disks):
-        print(f"{i + 1}: {name}\t{size}")
+        print(f'{i + 1}: {name}\t{size}')
 
-    user_choice = input("Disk ID: ")
+    user_choice = input('Disk ID: ')
     try:
         id = int(user_choice)
         if id == 0:
-            exit("No volume selected, exiting")
+            exit('No volume selected, exiting')
         elif id > len(disks):
-            exit(f"Invalid disk ID: {id}")
+            exit(f'Invalid disk ID: {id}')
     except ValueError:
-        exit(f"Invalid disk ID: {id}")
+        exit(f'Invalid disk ID: {id}')
 
     disk_name = disks[id - 1][1]
 
@@ -38,7 +41,7 @@ def get_disk_choice() -> str:
 def unmount_disk(disk_path: str):
     print(f'Unmounting {disk_path}...')
 
-    unmount_cmd = f"sudo diskutil unmountDisk {disk_path}"
+    unmount_cmd = f'sudo diskutil unmountDisk {disk_path}'
 
     subprocess.run(unmount_cmd.split(), capture_output=True)
 
@@ -69,7 +72,7 @@ def flash_rpi_os(rdisk_path: str):
     subprocess.run(['sync'])
 
     if 'Operation not permitted' in err:
-        exit("Volumes cannot access terminal. Enable at System Preferences > Security & Privacy > Privacy > Files and Folders, and give removable volumes access to Terminal.")
+        exit('Volumes cannot access terminal. Enable at System Preferences > Security & Privacy > Privacy > Files and Folders, and give removable volumes access to Terminal.')
     elif 'Permission denied' in err:
         print('Permission was denied, so clearing and trying again')
         erase_cmd = f'sudo diskutil partitionDisk {rdisk_path} 1 MBR "Free Space" "%noformat%" 100%'
@@ -123,8 +126,8 @@ def eject_sd_card(rdisk_path: str):
 if __name__ == '__main__':
     disk_name = get_disk_choice()
 
-    disk_path = f"/dev/{disk_name}"
-    rdisk_path = f"/dev/r{disk_name}"
+    disk_path = f'/dev/{disk_name}'
+    rdisk_path = f'/dev/r{disk_name}'
 
     unmount_disk(disk_path)
 
