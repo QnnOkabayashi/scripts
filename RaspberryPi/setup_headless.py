@@ -1,3 +1,7 @@
+'''
+python3 -c "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/RaspberryPi/setup_headless.py').read())"
+'''
+
 import os, subprocess, zipfile, urllib.request
 
 def get_disk_choice() -> str:
