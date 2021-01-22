@@ -9,4 +9,8 @@ sudo apt-get install git python3-picamera
 echo "Cloning project repo..."
 git clone https://github.com/QnnOkabayashi/PiDiffuserCam.git /home/$(whoami)/PiDiffuserCam
 
-echo "Finished PiDiffuserCam installation."
+echo "Enabling camera module..."
+sudo raspi-config nonint do_camera 0
+
+echo "Rebooting..."
+reboot
