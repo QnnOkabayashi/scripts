@@ -13,4 +13,4 @@ echo "Enabling camera module..."
 sudo raspi-config nonint do_camera 0
 
 echo "Rebooting..."
-reboot
+sudo reboot
